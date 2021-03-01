@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomComposableDescriptionView: View {
     
     // MARK: Stored properties
-    @State private var phrase: String = ""
+    @State private var percentComplete: CGFloat = 50.0
     
     // MARK: Computed properties
     var body: some View {
@@ -31,15 +31,16 @@ struct CustomComposableDescriptionView: View {
 
                         If the view accepts a parameter, provide a control to enter the input below.
                         """)
-                    
-                    TextField("Enter an input value", text: $phrase)
-                    
+                
+                    Slider(value: $percentComplete, in: 0...100, step: 1.0) {
+                        Text("Completion amount")
+                    }
                 }
                 .padding(.bottom)
                 
             }
             
-            NavigationLink(destination: CustomComposableView()) {
+            NavigationLink(destination: CustomComposableView(fillToValue: percentComplete)) {
                 SimpleListItemView(title: "My Composable View",
                                    caption: "A brief description of my view")
             }
