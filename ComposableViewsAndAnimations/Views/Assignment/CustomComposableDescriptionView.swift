@@ -26,11 +26,7 @@ struct CustomComposableDescriptionView: View {
                         .bold()
                         .padding(.top)
                     
-                    Text("""
-                        Replace this with a description of how to use this view.
-
-                        If the view accepts a parameter, provide a control to enter the input below.
-                        """)
+                    Text("Slide the bar to how well you are feeling right now:-) ")
                 
                     Slider(value: $percentComplete, in: 0...100, step: 1.0) {
                         Text("Completion amount")
