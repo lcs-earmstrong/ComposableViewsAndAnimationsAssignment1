@@ -22,10 +22,10 @@ struct CustomComposableView: View {
         ZStack{
             
             Rectangle()
-                              .fill(Color.primary)
-                              .colorInvert()
+                .trim(from: 0, to: completedAmount)
+                              .fill(Color.red)
                               .frame(width: 100, height: 548 - 44, alignment: .center)
-                                      // Offset is moves the opaque rectangle up
+                            // Offset is moves the opaque rectangle up
                                
                 .onReceive(timer) { _ in
                     

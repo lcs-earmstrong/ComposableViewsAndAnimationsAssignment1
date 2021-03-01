@@ -21,12 +21,12 @@ struct CustomComposableDescriptionView: View {
                 
                 Group {
                     
-                    Text("Description")
+                    Text("What is your body battery")
                         .font(.title2)
                         .bold()
                         .padding(.top)
                     
-                    Text("Slide the bar to how well you are feeling right now:-) ")
+                    Text("Slide the bar and it will show you what percentage you are at")
                 
                     Slider(value: $percentComplete, in: 0...100, step: 1.0) {
                         Text("Completion amount")
@@ -38,7 +38,7 @@ struct CustomComposableDescriptionView: View {
             
             NavigationLink(destination: CustomComposableView(fillToValue: percentComplete)) {
                 SimpleListItemView(title: "My Composable View",
-                                   caption: "A brief description of my view")
+                                   caption: "How much energy do you have right now")
             }
             
         }
