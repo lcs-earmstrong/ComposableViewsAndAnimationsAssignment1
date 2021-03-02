@@ -37,7 +37,12 @@ struct CustomComposableView: View {
                 
             Rectangle()
                 .trim(from: 0, to: completedAmount)
-                              .fill(Color.red)
+                
+                .fill (Color(hue: Double.random(in: 1...360) / 360.0,
+                        saturation: 0.8,
+                        brightness: 0.8))
+               
+
                               .frame(width: 100, height: (geometry.size.height) - 44, alignment: .center)
                             // Offset is moves the opaque rectangle up
                                
