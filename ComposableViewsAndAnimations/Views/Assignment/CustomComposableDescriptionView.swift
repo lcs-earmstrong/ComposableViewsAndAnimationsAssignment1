@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomComposableDescriptionView: View {
     
     // MARK: Stored properties
-    @State private var percentComplete: CGFloat = 50.0
+    @State private var percentComplete: CGFloat = 100.0
     
     // MARK: Computed properties
     var body: some View {
@@ -26,7 +26,7 @@ struct CustomComposableDescriptionView: View {
                         .bold()
                         .padding(.top)
                     
-                    Text("Slide the bar and it will show you what percentage you are at")
+                    Text("Slide the bar and it will show you what energy percentage you are at")
                 
                     Slider(value: $percentComplete, in: 0...100, step: 1.0) {
                         Text("Completion amount")
